@@ -18,6 +18,8 @@
 #define FOUND 1
 #define NOT_FOUND 0
 
+#define MAX_SIZE 512
+
 //A constant used in stringToKey()
 //to calculate the key of a string
 #define PRIME 31
@@ -26,7 +28,11 @@ unsigned long long int stringToKey(char* str);
 FILE* getFileFromUser();
 int hash(unsigned long long int key, int i);
 unsigned long long int hash1(unsigned long long int key);
+unsigned long long int hash2(unsigned long long int key);
 int probe(HashTable* hashTable, unsigned long long int key);
+char getNameFromFile(FILE* fp, char buffer[]);
+int parseFile(FILE* fp);
+char* releaseUnusedSpace(char* str);
 
 
 HashTable* hashTable;

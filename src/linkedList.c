@@ -7,7 +7,7 @@ void linkedlist_init(linkedlist* l)
 	l->size = 0;
 }
 
-void linkedlist_insert_front(linkedlist* l, void* val)
+void linkedlist_insert_front(linkedlist* l, char* val)
 {
 	linkedlist_node* node;
 	node = (linkedlist_node*)my_malloc(LINKED_LIST_NODE, 1);
@@ -24,7 +24,7 @@ void linkedlist_insert_front(linkedlist* l, void* val)
 	++l->size;
 }
 
-void linkedlist_insert_back(linkedlist* l, void* val)
+void linkedlist_insert_back(linkedlist* l, char* val)
 {
 	linkedlist_node* node;
 	node = (linkedlist_node*)my_malloc(LINKED_LIST_NODE, 1);
@@ -49,7 +49,6 @@ void linkedlist_remove_node(linkedlist* l, linkedlist_node* node)
 	while (n != node) {
 		n = n->next;
 	}
-	assert(n == node);
 
 	// erasing head node
 	if (node == l->head)
@@ -67,21 +66,21 @@ void linkedlist_remove_node(linkedlist* l, linkedlist_node* node)
 		((linkedlist_node*)node->next)->prev = node->prev;
 
 
-	free(node);		
+	free(node);
 
 	// reduce size by one
 	--l->size;
 }
 
 // this is a slow way of removal as it involves iterating, we should do this elsewhere. (it's O(N))
-void linkedlist_remove_val(linkedlist* l, void* val)
+void linkedlist_remove_val(linkedlist* l, char* val)
 {
 	linkedlist_node* n, * n2;
 	for (n = l->head; n != NULL; )
 	{
 		n2 = n;
 		n = n->next;
-		if (val == n2->val)
+		if (strcmp(val, n2->val) == 0)
 			linkedlist_remove_node(l, n2);
 	}
 }

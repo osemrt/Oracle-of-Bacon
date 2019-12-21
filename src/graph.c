@@ -32,6 +32,7 @@ int graph_add_vertex(Graph* graph, Vertex* vertex) {
 Vertex* createVertex(char* value) {
 	Vertex* vertex = (Vertex*)my_malloc(VERTEX, 1);
 	vertex->value = value;
+	vertex->edges = (linkedlist*)my_malloc(LINKED_LIST, 1);
 	linkedlist_init(vertex->edges);
 	vertex->visited = FALSE;
 	vertex->parent = NULL;

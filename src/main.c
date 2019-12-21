@@ -6,7 +6,7 @@ int main(int argc, char const* argv[])
 	graph = graph_create();
 
 	FILE* fp = getFileFromUser();
-
+	int parseFile(fp)
 
 
 	return 0;
