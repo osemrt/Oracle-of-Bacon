@@ -7,7 +7,10 @@ Graph* graph_create() {
 }
 
 Vertex* graph_get_vertex(Graph* graph, char* str) {
-	unsigned long long int key = stringToKey(str);
+	Key* key = (Key*)my_malloc(KEY, 1);
+	key->str = str;
+	key->value = stringToKey(str);
+
 	int index = ht_get(hashTable, key);
 	if (index >= graph->size)
 		return NULL;
@@ -16,9 +19,12 @@ Vertex* graph_get_vertex(Graph* graph, char* str) {
 }
 
 int graph_add_vertex(Graph* graph, Vertex* vertex) {
-	unsigned long long int key = stringToKey(vertex->value);
+	Key* key = (Key*)my_malloc(KEY, 1);
+	key->str = vertex->value;
+	key->value = stringToKey(vertex->value);
+
 	int index = ht_get(hashTable, key);
-	if (index != INT_MIN) {
+	if (index == INT_MIN) {
 		index = graph->size;
 		ht_put(hashTable, key, index);
 		graph->vertices[index] = vertex;

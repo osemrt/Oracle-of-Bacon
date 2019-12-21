@@ -4,8 +4,13 @@
 
 enum entryStatus { EMPTY, DELETED, OCCUPIED };
 
+typedef struct Key {
+	char* str;
+	unsigned long long int value;
+}Key;
+
 typedef struct HashNode {
-	int key;
+	Key* key;
 	int value;
 }HashNode;
 
@@ -20,10 +25,10 @@ typedef struct HashTable {
 }HashTable;
 
 HashTable* ht_create(int size);
-Entry* ht_search(HashTable* hashTable, unsigned long long int key);
-void ht_put(HashTable* hashTable, unsigned long long int key, int value);
-int ht_get(HashTable* hashTable, unsigned long long int key);
-int ht_delete(HashTable* hashTable, int key);
+Entry* ht_search(HashTable* hashTable, Key key);
+void ht_put(HashTable* hashTable, Key key, int value);
+int ht_get(HashTable* hashTable, Key key);
+int ht_delete(HashTable* hashTable, Key key);
 void ht_print(HashTable* hashTable);
 
 

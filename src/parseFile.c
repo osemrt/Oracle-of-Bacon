@@ -18,11 +18,11 @@ int parseFile(FILE* fp) {
 			graph_add_vertex(graph, movie_vertex);
 		}
 		printf("Adding actors/actresses played on '%s' to the graph...\n", movie);
-		while (ch != '\n') {
+		while (ch != '\n' && ch != EOF) {
 			ch = getNameFromFile(fp, buffer);
 			if (ch == '/') {
 				actor = releaseUnusedSpace(buffer);
-				if (strcmp(" Irene", actor)==0) {
+				if (strcmp("NeverEnding Story II: The Next Chapter, The (1990)", movie) == 0) {
 					printf("here!");
 				}
 				actor_vertex = createVertex(actor);
@@ -36,5 +36,6 @@ int parseFile(FILE* fp) {
 		printf("%d", graph->size);
 	}
 
+	fclose(fp);
 
 }

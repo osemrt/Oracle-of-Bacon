@@ -29,21 +29,20 @@ void* my_malloc(int TYPE, int size) {
 		arr = malloc(sizeof(Vertex) * size);
 		break;
 
-	/*case ENTRY:
-		arr = (Entry*)malloc(sizeof(Entry) * size);
+	case ENTRY:
+		arr = malloc(sizeof(Entry) * size);
 		break;
 
 	case HASH_TABLE:
-		arr = (HashTable*)malloc(sizeof(HashTable) * size);
+		arr = malloc(sizeof(HashTable) * size);
 		break;
 
 	case HASH_NODE:
+		arr = malloc(sizeof(HashNode) * size);
+		break;
+	case KEY:
 		arr = (HashNode*)malloc(sizeof(HashNode) * size);
 		break;
-
-	case REGULAR_FILE:
-		arr = (File*)malloc(sizeof(File) * size);
-		break;*/
 
 	default:
 		arr = (void*)malloc(size);

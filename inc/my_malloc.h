@@ -12,9 +12,8 @@
 #define LINKED_LIST_NODE 4
 #define GRAPH 5
 #define VERTEX 6
-////#define ENTRY 3
-////#define HASH_TABLE 4
-////#define HASH_NODE 5
-////#define REGULAR_FILE 6
+#define ENTRY 7
+#define HASH_TABLE 8
+#define HASH_NODE 9
 
 #endif // !MY_MALLOC_H
