@@ -18,7 +18,7 @@
 #define FOUND 1
 #define NOT_FOUND 0
 
-#define MAX_SIZE 512
+#define MAX_SIZE 1024
 
 //A constant used in stringToKey()
 //to calculate the key of a string
@@ -33,6 +33,8 @@ int probe(HashTable* hashTable, unsigned long long int key);
 char getNameFromFile(FILE* fp, char buffer[]);
 int parseFile(FILE* fp);
 char* releaseUnusedSpace(char* str);
+int computeDistance(char* actor1, char* actor2, char path[], int flag);
+int backtrace(Vertex* startVertex, Vertex* endVertex, int flag);
 
 
 HashTable* hashTable;

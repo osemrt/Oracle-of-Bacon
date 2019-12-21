@@ -15,5 +15,7 @@
 #define ENTRY 7
 #define HASH_TABLE 8
 #define HASH_NODE 9
+#define KEY 10
+#define QUEUE 11
 
 #endif // !MY_MALLOC_H

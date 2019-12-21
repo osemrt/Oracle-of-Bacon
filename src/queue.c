@@ -1,13 +1,13 @@
 #include "../inc/main.h"
 
-Queue createQueue() {
-	Queue queue;
-	queue.front = -1;
-	queue.rear = -1;
+Queue* createQueue() {
+	Queue* queue = (Queue*)my_malloc(QUEUE, 1);
+	queue->front = -1;
+	queue->rear = -1;
 	return queue;
 }
 
-int enQueue(Queue* queue, int x) {
+int enQueue(Queue* queue, Vertex* vertex) {
 
 	if (isFull(queue)) {
 		return FALSE;
@@ -18,27 +18,27 @@ int enQueue(Queue* queue, int x) {
 	else {
 		queue->rear = (queue->rear + 1) % MAX_QUEUE_SIZE;
 	}
-	queue->items[queue->rear] = x;
+	queue->items[queue->rear] = vertex;
 	return TRUE;
 }
 
-int deQueue(Queue* queue, int* x) {
+int deQueue(Queue* queue, Vertex** vertex) {
 	if (queue->front == queue->rear) {
-		*x = queue->items[queue->front];
+		*vertex = queue->items[queue->front];
 		queue->front = queue->rear = -1;
 		return TRUE;
 	}
 	else if (!isEmpty(queue)) {
-		*x = queue->items[queue->front];
+		*vertex = queue->items[queue->front];
 		queue->front = (queue->front + 1) % MAX_QUEUE_SIZE;
 		return TRUE;
 	}
 	return FALSE;
 }
 
-int getFront(Queue* queue, int* x) {
+int getFront(Queue* queue, Vertex** vertex) {
 	if (!isEmpty(queue)) {
-		*x = queue->items[queue->front];
+		*vertex = queue->items[queue->front];
 		return TRUE;
 	}
 	return FALSE;
@@ -57,9 +57,9 @@ int printQueue(Queue* queue) {
 	if (!isEmpty(queue)) {
 		printf("\nfront-> [ ");
 		for (int i = queue->front; i != queue->rear; i = (i + 1) % MAX_QUEUE_SIZE) {
-			printf("%d ", queue->items[i % MAX_QUEUE_SIZE]);
+			printf("%s ", queue->items[i % MAX_QUEUE_SIZE]->value);
 		}
-		printf("%d ", queue->items[queue->rear]);
+		printf("%s ", queue->items[queue->rear]->value);
 		printf("] <- rear\n");
 	}
 	else {

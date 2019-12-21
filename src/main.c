@@ -7,19 +7,11 @@ int main(int argc, char const* argv[])
 
 	FILE* fp = getFileFromUser();
 	parseFile(fp);
+	char path[MAX_SIZE];
 
-	ht_print(hashTable);
-	Vertex* vertex = graph_get_vertex(graph, "Cobra (1986)");
+	int distance = computeDistance("Adcock, Danny", "Barnes, Deryck", FALSE);
 
-	linkedlist* list = vertex->edges;
-
-	while (list->head!=NULL)
-	{
-		printf("%s", list->head->val);
-		list->head = list->head->next;
-
-	}
-
+	Vertex* vertex = graph_get_vertex(graph, "Inferno (2000)");
 
 
 	return 0;

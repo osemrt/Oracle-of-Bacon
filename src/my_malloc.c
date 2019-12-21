@@ -41,7 +41,10 @@ void* my_malloc(int TYPE, int size) {
 		arr = malloc(sizeof(HashNode) * size);
 		break;
 	case KEY:
-		arr = (HashNode*)malloc(sizeof(HashNode) * size);
+		arr = malloc(sizeof(HashNode) * size);
+		break;
+	case QUEUE:
+		arr = malloc(sizeof(HashNode) * size);
 		break;
 
 	default:
