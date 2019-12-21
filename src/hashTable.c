@@ -24,10 +24,6 @@ Entry* ht_search(HashTable* hashTable, Key* key) {
 		return NULL;
 	}
 
-	if (strcmp(key->str, "Cobra (1986)") == 0) {
-		printf("debug: %d", key->value);
-	}
-
 	int i = 0;
 	int hashIndex = hash(key->value, i);
 
@@ -46,12 +42,12 @@ Entry* ht_search(HashTable* hashTable, Key* key) {
 }
 
 void ht_put(HashTable* hashTable, Key* key, int value) {
+
 	int i = 0;
 	int hashIndex = hash(key->value, i);
 
-	
-	if (hashTable->arr[hashIndex].status == OCCUPIED) {
-		hashIndex = probe(hashTable, key);
+	while (hashTable->arr[hashIndex].status == OCCUPIED) {
+		hashIndex = hash(key->value, ++i);
 	}
 
 	hashTable->arr[hashIndex].status = OCCUPIED;
@@ -61,13 +57,10 @@ void ht_put(HashTable* hashTable, Key* key, int value) {
 
 int ht_get(HashTable* hashTable, Key* key) {
 	Entry* entry = ht_search(hashTable, key);
-
 	if (entry == NULL) {
 		return INT_MIN;
 	}
-
 	return entry->hashNode->value;
-
 }
 
 int ht_delete(HashTable* hashTable, Key* key) {

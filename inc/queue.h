@@ -1,6 +1,6 @@
 #pragma once
 
-#define MAX_QUEUE_SIZE 10000
+#define MAX_QUEUE_SIZE 1000000
 
 typedef struct {
 	int front;
@@ -8,7 +8,7 @@ typedef struct {
 	Vertex* items[MAX_QUEUE_SIZE];
 }Queue;
 
-Queue createQueue();
+Queue* createQueue();
 int enQueue(Queue* queue, Vertex* vertex);
 int deQueue(Queue* queue, Vertex** vertex);
 int getFront(Queue* queue, Vertex** vertex);

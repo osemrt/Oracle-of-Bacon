@@ -1,17 +1,15 @@
 #include "..\inc\main.h"
 
-char getNameFromFile(FILE* fp, char buffer[]) {
+int getNameFromFile(char* file, int filesize, int* i, char buffer[]) {
 
-	int i = 0;
-	//char c = getc(fp);
-	fread(&c, sizeof(c), 1, fp);
-	while (c != EOF && c != '\n' && c != '/') {
-		buffer[i] = c;
-		i++;
-		c = getc(fp);
+	char c = file[*i];
+	int k = 0;
+	while (*i < filesize && c != '\n' && c != '/') {
+		buffer[k++] = c;
+		(*i)++;
+		c = file[*i];
 	}
-
-	buffer[i] = '\0';
-
+	buffer[k] = '\0';
+	(*i)++;
 	return c;
 }

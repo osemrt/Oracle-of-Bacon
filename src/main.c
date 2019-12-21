@@ -5,13 +5,18 @@ int main(int argc, char const* argv[])
 	hashTable = ht_create(MAX_VERTEX_COUNT * 2);
 	graph = graph_create();
 
-	FILE* fp = getFileFromUser();
-	parseFile(fp);
-	char path[MAX_SIZE];
+	int fileSize;
+	char* file = getFileFromUser(&fileSize);
+	parseFile(file, fileSize);
+	Stack* stack = createStack();
 
-	int distance = computeDistance("Adcock, Danny", "Barnes, Deryck", FALSE);
+	char *actor1 = "Schwarzenegger, Arnold";
+	char *actor2 = "Streep, Meryl";
+	int distance = computeDistance(actor1, actor2, stack, FALSE);
 
-	Vertex* vertex = graph_get_vertex(graph, "Inferno (2000)");
+	printResults(actor1, actor2, stack, distance);
+
+
 
 
 	return 0;

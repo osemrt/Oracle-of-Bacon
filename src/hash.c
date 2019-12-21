@@ -9,7 +9,7 @@ unsigned long long int hash1(unsigned long long int key) {
 	return key % M;
 }
 
-unsigned long long int hash2(unsigned long long int key) {
+int hash2(unsigned long long int key) {
 	int MM = hashTable->size - 1;
 	return 1 + (key % MM);
 }

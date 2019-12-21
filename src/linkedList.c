@@ -29,15 +29,32 @@ void linkedlist_insert_back(linkedlist* l, char* val)
 	linkedlist_node* node;
 	node = (linkedlist_node*)my_malloc(LINKED_LIST_NODE, 1);
 
+	node->next = NULL;
+	node->val = val;
+
+
 	// list:
 	//  [head node]->[node]->[node]->[tail node]
 	//                                          ^ inserting here
 
-	node->next = NULL;
-	node->prev = l->tail;
-	node->val = val;
 
-	l->tail = node;
+	if (l->head == NULL) {
+		l->head = node;
+		node->prev = NULL;
+
+	}
+	else {
+
+		linkedlist_node* tmp = l->head;
+
+		while (tmp->next != NULL) {
+			tmp = tmp->next;
+		}
+
+		tmp->next = node;
+		node->prev = tmp;
+	}
+
 	++l->size;
 }
 

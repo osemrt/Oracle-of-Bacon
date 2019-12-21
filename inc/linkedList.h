@@ -2,9 +2,8 @@
 #define LINKEDLIST_H
 
 typedef struct linkedlist_node
-{
-	linkedlist_node* prev;
-	linkedlist_node* next;
+{	struct linkedlist_node* prev;
+	struct linkedlist_node* next;
 	char* val;
 } linkedlist_node;
 

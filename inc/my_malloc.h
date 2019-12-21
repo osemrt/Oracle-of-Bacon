@@ -17,5 +17,6 @@
 #define HASH_NODE 9
 #define KEY 10
 #define QUEUE 11
+#define STACK 12
 
 #endif // !MY_MALLOC_H

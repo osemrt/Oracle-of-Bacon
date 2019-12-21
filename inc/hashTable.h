@@ -25,10 +25,10 @@ typedef struct HashTable {
 }HashTable;
 
 HashTable* ht_create(int size);
-Entry* ht_search(HashTable* hashTable, Key key);
-void ht_put(HashTable* hashTable, Key key, int value);
-int ht_get(HashTable* hashTable, Key key);
-int ht_delete(HashTable* hashTable, Key key);
+Entry* ht_search(HashTable* hashTable, Key* key);
+void ht_put(HashTable* hashTable, Key* key, int value);
+int ht_get(HashTable* hashTable, Key* key);
+int ht_delete(HashTable* hashTable, Key* key);
 void ht_print(HashTable* hashTable);
 
 

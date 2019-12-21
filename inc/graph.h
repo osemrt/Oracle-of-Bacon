@@ -3,13 +3,16 @@
 
 #include "linkedList.h"
 
-#define MAX_VERTEX_COUNT 30000
+#define MAX_VERTEX_COUNT 300000
+#define MOVIE 1
+#define ACTOR 0
 
 typedef struct Vertex {
 	char* value;
 	linkedlist* edges;
 	int visited;
 	char* parent;
+	int type;
 }Vertex;
 
 
@@ -21,6 +24,6 @@ typedef struct Graph {
 Graph* graph_create();
 Vertex* graph_get_vertex(Graph* graph, char* str);
 int graph_add_vertex(Graph* graph, Vertex* vertex);
-Vertex* createVertex(char* value);
+Vertex* createVertex(char* value, int type);
 
 #endif // !GRAPH_H

@@ -1,12 +1,9 @@
 #include "../inc/main.h"
 
-int computeDistance(char* actor1, char* actor2, char path[], int flag) {
-
-
+int computeDistance(char* actor1, char* actor2, Stack* stack, int flag) {
 	Vertex* current = NULL;
 	Vertex* vertex = NULL;
 	linkedlist_node* neighbor;
-	int distance = 0;
 	Queue* queue = createQueue();
 	Vertex* start_vertex = graph_get_vertex(graph, actor1);
 	enQueue(queue, start_vertex);
@@ -15,7 +12,7 @@ int computeDistance(char* actor1, char* actor2, char path[], int flag) {
 		
 		deQueue(queue, &current);
 		if (strcmp(current->value, actor2) == 0) {
-			return backtrace(start_vertex, current, path, flag);
+			return backtrace(start_vertex, current, stack, flag);
 		}
 
 		neighbor = current->edges->head;
@@ -28,10 +25,6 @@ int computeDistance(char* actor1, char* actor2, char path[], int flag) {
 			}
 			neighbor = neighbor->next;
 		}
-
-
-	}
-
-	
+	}	
 
 }
