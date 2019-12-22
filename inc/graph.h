@@ -25,5 +25,6 @@ Graph* graph_create();
 Vertex* graph_get_vertex(Graph* graph, char* str);
 int graph_add_vertex(Graph* graph, Vertex* vertex);
 Vertex* createVertex(char* value, int type);
+void resetGraph(Graph* graph);
 
 #endif // !GRAPH_H

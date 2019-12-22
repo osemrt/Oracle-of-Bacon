@@ -17,4 +17,7 @@ void printResults(char* start, char* end, Stack* stack, int distance) {
 		printf("%s - %s \"%s\"\n", actor1, actor2, movie);
 		i++;
 	}
+
+	resetStack(stack);
+
 }

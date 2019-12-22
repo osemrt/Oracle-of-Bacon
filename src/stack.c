@@ -55,3 +55,8 @@ int printStack(Stack* stack) {
 	}
 
 }
+
+int resetStack(Stack* stack) {
+	stack->top = -1;
+	return TRUE;
+}

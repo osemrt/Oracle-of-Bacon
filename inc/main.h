@@ -36,6 +36,8 @@ char* releaseUnusedSpace(char* str);
 int computeDistance(char* actor1, char* actor2, Stack* stack, int flag);
 int backtrace(Vertex* startVertex, Vertex* endVertex, Stack* stack, int flag);
 void printResults(char* start, char* end, Stack* stack, int distance);
+void showMenu();
+char* readNameFromUser();
 
 HashTable* hashTable;
 Graph* graph;

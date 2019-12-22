@@ -7,7 +7,7 @@ char* getFileFromUser(int* fileSize) {
 	char* filePath = (char*)my_malloc(CHAR, 1024);
 	do {
 
-		printf("Drag and drop samples.txt\n");
+		printf("Drag and drop the dataset...\n");
 		scanf("%s", filePath);
 
 		fp = fopen(filePath, "rb");

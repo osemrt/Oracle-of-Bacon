@@ -16,5 +16,6 @@ int peek(Stack* stack, char** x);
 int _isEmpty(Stack* stack);
 int _isFull(Stack* stack);
 int printStack(Stack* stack);
+int resetStack(Stack* stack);
 
 #endif // !STACK_H
