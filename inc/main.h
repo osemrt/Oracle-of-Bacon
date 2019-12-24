@@ -11,7 +11,7 @@
 #include "linkedList.h"
 #include "queue.h"
 #include "my_malloc.h"s
-#include "stack.h"s
+
 
 #define TRUE 1
 #define FALSE 0
@@ -33,9 +33,9 @@ int hash2(unsigned long long int key);
 int getNameFromFile(char* file, int filesize, int* i, char buffer[]);
 void parseFile(char* file, int fileSize);
 char* releaseUnusedSpace(char* str);
-int computeDistance(char* actor1, char* actor2, Stack* stack, int flag);
-int backtrace(Vertex* startVertex, Vertex* endVertex, Stack* stack, int flag);
-void printResults(char* start, char* end, Stack* stack, int distance);
+int computeDistance(char* actor1, char* actor2, char* path[], int flag);
+int backtrace(Vertex* startVertex, Vertex* endVertex, char* path[], int flag);
+void printResults(char* start, char* end, char* path[], int distance);
 void showMenu();
 char* readNameFromUser();
 

@@ -24,10 +24,6 @@ int graph_add_vertex(Graph* graph, Vertex* vertex) {
 	key->str = vertex->value;
 	key->value = stringToKey(vertex->value);
 
-	if (strcmp("Villain, The (1979)", key->str) == 0) {
-		printf("asd");
-	}
-
 	int index = ht_get(hashTable, key);
 	if (index == INT_MIN) {
 		index = graph->size;

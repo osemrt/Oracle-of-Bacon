@@ -46,7 +46,7 @@ void ht_put(HashTable* hashTable, Key* key, int value) {
 	int i = 0;
 	int hashIndex = hash(key->value, i);
 
-	while (hashTable->arr[hashIndex].status == OCCUPIED) {
+	while (hashTable->arr[hashIndex].status != EMPTY) {
 		hashIndex = hash(key->value, ++i);
 	}
 

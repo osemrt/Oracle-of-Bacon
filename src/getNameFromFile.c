@@ -1,5 +1,6 @@
 #include "..\inc\main.h"
 
+//A function to read a string from the file until seeing a forward-slash
 int getNameFromFile(char* file, int filesize, int* i, char buffer[]) {
 
 	char c = file[*i];

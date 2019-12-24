@@ -1,5 +1,6 @@
 #include "../inc/main.h"
 
+//A function to read the dataset from the user.
 char* getFileFromUser(int* fileSize) {
 
 	//Reading a file from the user						 

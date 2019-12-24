@@ -50,7 +50,7 @@ void linkedlist_insert_back(linkedlist* l, char* val)
 		while (tmp->next != NULL) {
 			tmp = tmp->next;
 		}
-
+		l->tail = node;
 		tmp->next = node;
 		node->prev = tmp;
 	}

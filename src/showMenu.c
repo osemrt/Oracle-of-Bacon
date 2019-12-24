@@ -3,7 +3,7 @@
 void showMenu() {
 
 
-	Stack* stack = createStack();
+	char* path[MAX_SIZE];
 	char* actor1;
 	char* actor2;
 	int distance;
@@ -48,12 +48,12 @@ void showMenu() {
 			if (FLAG == TRUE) {
 				actor1 = readNameFromUser();
 				actor2 = "Bacon, Kevin";
-				distance = computeDistance(actor1, actor2, stack, TRUE);
+				distance = computeDistance(actor1, actor2, path, TRUE);
 				if (distance == -1) {
 					printf("The given actor/actress is too far from the Kevin-Bacon (distance>6)...\n");
 				}
 				else {
-					printResults(actor1, actor2, stack, distance);
+					printResults(actor1, actor2, path, distance);
 				}
 				printf("\nPress any key to continue...\n\n");
 				getchar();
@@ -74,8 +74,8 @@ void showMenu() {
 				actor1 = readNameFromUser();
 				printf("Second: ");
 				actor2 = readNameFromUser();
-				distance = computeDistance(actor1, actor2, stack, FALSE);
-				printResults(actor1, actor2, stack, distance);
+				distance = computeDistance(actor1, actor2, path, FALSE);
+				printResults(actor1, actor2, path, distance);
 
 				printf("\nPress any key to continue...\n\n");
 

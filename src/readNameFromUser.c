@@ -1,6 +1,6 @@
 #include "..\inc\main.h"
 
-
+//A function to read a actor name from the user
 char* readNameFromUser() {
 	char input[MAX_SIZE];
 	int c;

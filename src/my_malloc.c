@@ -46,9 +46,6 @@ void* my_malloc(int TYPE, int size) {
 	case QUEUE:
 		arr = malloc(sizeof(Queue) * size);
 		break;
-	case STACK:
-		arr = malloc(sizeof(Stack) * size);
-		break;
 
 	default:
 		arr = (void*)malloc(size);
