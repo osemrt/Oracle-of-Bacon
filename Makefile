@@ -8,7 +8,7 @@ SOURCE = $(wildcard $(SRC)/*.c)
 OBJECT = $(patsubst %,$(BIN)/%, $(notdir $(SOURCE:.c=.o)))
 
 CC = gcc
-CFLAGS = -Wall -std=gnu99 -I$(/INC)
+CFLAGS = -Wall -std=gnu99 -I$(INC)
 
 RED = \033[1;31m
 GREEN = \033[1;32m
