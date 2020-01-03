@@ -1,4 +1,4 @@
-#include "..\inc\main.h"
+#include "main.h"
 
 //A funtion to print the result after backtracking
 void printResults(char* start, char* end, char* path[], int distance) {

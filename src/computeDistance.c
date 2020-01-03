@@ -1,4 +1,4 @@
-#include "../inc/main.h"
+#include "main.h"
 
 //A function to compute the distance between two actors.
 //int flag is used to check condition for kevin-backon number
@@ -28,6 +28,9 @@ int computeDistance(char* actor1, char* actor2, char* path[], int flag) {
 			}
 			neighbor = neighbor->next;
 		}
-	}	
+	}
+
+	return 0;
+
 
 }

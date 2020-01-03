@@ -1,4 +1,4 @@
-#include "..\inc\main.h"
+#include "main.h"
 
 //A function to reset the graph after each querying operations
 void resetGraph(Graph* graph) {

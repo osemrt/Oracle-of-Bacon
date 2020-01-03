@@ -1,4 +1,4 @@
-#include "../inc/main.h"
+#include "my_malloc.h"
 
 //A function to allocate memory in the heap in the desired manner
 //and if it is not created then it ends the program

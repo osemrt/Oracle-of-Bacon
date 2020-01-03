@@ -1,4 +1,4 @@
-#include "../inc/main.h"
+#include "graph.h"
 
 Graph* graph_create() {
 	Graph* graph = (Graph*)my_malloc(GRAPH, 1);
@@ -42,4 +42,5 @@ Vertex* createVertex(char* value, int type) {
 	vertex->visited = FALSE;
 	vertex->parent = NULL;
 	vertex->type = type;
+	return vertex;
 }

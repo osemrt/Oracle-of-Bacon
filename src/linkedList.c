@@ -1,4 +1,5 @@
-#include "../inc/main.h"
+#include "linkedList.h"
+#include "common.h"
 
 void linkedlist_init(linkedlist* l)
 {

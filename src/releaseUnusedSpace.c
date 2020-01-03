@@ -1,11 +1,11 @@
-#include "..\inc\main.h"
+#include "main.h"
 
 //A function to used to remove unused spaces
 //in the given string
 char* releaseUnusedSpace(char* str) {
 
 	int i = 0;
-	while (str[i++] != NULL)
+	while (str[i++] != '\0')
 		i++;
 
 	//Total character count

@@ -1,4 +1,4 @@
-#include "../inc/main.h"
+#include "main.h"
 
 //A function to find the path after finding the distance.
 int backtrace(Vertex* startVertex, Vertex* endVertex, char* path[], int flag) {

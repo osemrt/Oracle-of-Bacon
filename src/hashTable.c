@@ -1,4 +1,11 @@
-#include "../inc/main.h"
+#include "hashTable.h"
+
+HashTable* ht_create(int size);
+Entry* ht_search(HashTable* hashTable, Key* key);
+void ht_put(HashTable* hashTable, Key* key, int value);
+int ht_get(HashTable* hashTable, Key* key);
+int ht_delete(HashTable* hashTable, Key* key);
+void ht_print(HashTable* hashTable);
 
 HashTable* ht_create(int size) {
 	HashTable* hashTable = (HashTable*)my_malloc(HASH_TABLE, 1);

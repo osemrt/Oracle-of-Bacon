@@ -2,6 +2,9 @@
 #define GRAPH_H
 
 #include "linkedList.h"
+#include "graph.h"
+#include "my_malloc.h"
+
 
 #define MAX_VERTEX_COUNT 300000
 #define MOVIE 1

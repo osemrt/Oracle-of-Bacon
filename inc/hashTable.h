@@ -1,6 +1,7 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
+#include "common.h"
 
 enum entryStatus { EMPTY, DELETED, OCCUPIED };
 
@@ -30,6 +31,5 @@ void ht_put(HashTable* hashTable, Key* key, int value);
 int ht_get(HashTable* hashTable, Key* key);
 int ht_delete(HashTable* hashTable, Key* key);
 void ht_print(HashTable* hashTable);
-
 
 #endif // !HASHTABLE_H

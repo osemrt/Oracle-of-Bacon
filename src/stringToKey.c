@@ -1,4 +1,8 @@
-#include "../inc/main.h"
+#include "main.h"
+
+//A constant used in stringToKey()
+//to calculate the key of a string
+#define PRIME 31
 
 //A function used to calculate a key for a given string
 unsigned long long int stringToKey(char* str) {

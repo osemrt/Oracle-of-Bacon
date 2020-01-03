@@ -1,4 +1,4 @@
-#include "../inc/main.h"
+#include "main.h"
 
 //A function to parse the movie and actor names from the file 
 //and adds them to the graph.

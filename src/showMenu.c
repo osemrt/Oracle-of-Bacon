@@ -1,4 +1,4 @@
-#include "..\inc\main.h"
+#include "main.h"
 
 void showMenu() {
 
@@ -42,7 +42,7 @@ void showMenu() {
 
 			break;
 		case 2:
-
+			while ((c = getchar()) != '\n' && c != EOF); 
 			clearScreen();
 
 			if (FLAG == TRUE) {
@@ -67,7 +67,7 @@ void showMenu() {
 
 			break;
 		case 3:
-
+			while ((c = getchar()) != '\n' && c != EOF);
 			clearScreen();
 			if (FLAG == TRUE) {
 				printf("First: ");
@@ -80,6 +80,8 @@ void showMenu() {
 				printf("\nPress any key to continue...\n\n");
 
 				while ((c = getchar()) != '\n' && c != EOF);
+
+				resetGraph(graph);
 
 			}
 			else {

@@ -9,8 +9,8 @@ typedef struct linkedlist_node
 
 typedef struct linkedlist
 {
-	linkedlist_node* head;
-	linkedlist_node* tail;
+	struct linkedlist_node* head;
+	struct linkedlist_node* tail;
 	int size;
 } linkedlist;
 

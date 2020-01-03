@@ -1,4 +1,12 @@
-#include "../inc/main.h"
+#include "queue.h"
+
+Queue* createQueue();
+int enQueue(Queue* queue, Vertex* vertex);
+int deQueue(Queue* queue, Vertex** vertex);
+int getFront(Queue* queue, Vertex** vertex);
+int isEmpty(Queue* queue);
+int isFull(Queue* queue);
+int printQueue(Queue* queue);
 
 Queue* createQueue() {
 	Queue* queue = (Queue*)my_malloc(QUEUE, 1);
@@ -66,4 +74,6 @@ int printQueue(Queue* queue) {
 		printf("\nEmpty Queue!\n");
 		return FALSE;
 	}
+
+	return TRUE;
 }

@@ -1,4 +1,4 @@
-#include "..\inc\main.h"
+#include "main.h"
 
 int hash(unsigned long long int key, int i) {
 	return (hash1(key) + i * hash2(key)) % hashTable->size;
